@@ -130,11 +130,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateSouthMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_sur ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = pieceRow + 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = pieceRow + 1; i < 8 && count < mover_sur; i++ ){
                 if ( ( board.getCell( i, pieceColumn ).getPieceOnSquare()
                     == null || isEnemy( board, i, pieceColumn ) ) ){
                     moves.add( i + "," + pieceColumn );
@@ -164,11 +164,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateNorthMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_norte ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = pieceRow - 1; i >= 0 && count < numMoves; i-- ){
+            for ( int i = pieceRow - 1; i >= 0 && count < mover_norte; i-- ){
                 if ( ( board.getCell( i, pieceColumn ).getPieceOnSquare()
                     == null || isEnemy( board, i, pieceColumn ) ) ){
                     moves.add( i + "," + pieceColumn );
@@ -198,11 +198,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateEastMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_este ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = pieceColumn + 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = pieceColumn + 1; i < 8 && count < mover_este; i++ ){
                 if ( ( board.getCell( pieceRow, i ).getPieceOnSquare()
                     == null || isEnemy( board, pieceRow, i ) ) ){
                     moves.add( pieceRow + "," + i );
@@ -232,11 +232,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateWestMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_oeste ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = pieceColumn - 1; i >= 0 && count < numMoves; i-- ){
+            for ( int i = pieceColumn - 1; i >= 0 && count < mover_oeste; i-- ){
                 if ( ( board.getCell(pieceRow, i ).getPieceOnSquare()
                     == null || isEnemy( board, pieceRow, i ) ) ){
                     moves.add( pieceRow + "," + i );
@@ -266,11 +266,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateNorthWestMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_noroeste ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = 1; i < 8 && count < mover_noroeste; i++ ){
                 if ( isOnScreen( pieceRow - i, pieceColumn - i )
                     && ( board.getCell( pieceRow - i,
                         pieceColumn - i ).getPieceOnSquare() == null ) ){
@@ -303,11 +303,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateNorthEastMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_noreste ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = 1; i < 8 && count < mover_noreste; i++ ){
                 if ( isOnScreen( pieceRow - i, pieceColumn + i )
                     && ( board.getCell( pieceRow - i,
                         pieceColumn + i).getPieceOnSquare() == null ) ){
@@ -340,11 +340,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateSouthWestMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_suroeste ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = 1; i < 8 && count < mover_suroeste; i++ ){
                 if ( isOnScreen( pieceRow + i, pieceColumn - i )
                     && ( board.getCell( pieceRow + i,
                         pieceColumn - i ).getPieceOnSquare() == null ) ){
@@ -377,11 +377,11 @@ public abstract class ChessGamePiece{
      */
     protected ArrayList<String> calculateSouthEastMoves(
         ChessGameBoard board,
-        int numMoves ){
+        int mover_sureste ){
         ArrayList<String> moves = new ArrayList<String>();
         int count = 0;
         if ( isPieceOnScreen() ){
-            for ( int i = 1; i < 8 && count < numMoves; i++ ){
+            for ( int i = 1; i < 8 && count < mover_sureste; i++ ){
                 if ( isOnScreen( pieceRow + i, pieceColumn + i )
                     && ( board.getCell( pieceRow + i,
                         pieceColumn + i ).getPieceOnSquare() == null ) ){
